@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: market-link
+    env: ruby
+    plan: free
+    numInstances: 1
+    buildCommand: bin/render-build.sh
+    startCommand: bundle exec puma -C config/deploy/puma.rb
+    envVars:
+      - key: RAILS_MASTER_KEY
+        sync: false
