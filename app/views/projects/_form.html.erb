@@ -1,0 +1,32 @@
+<%= form_with(model: project, local: true) do |f| %>
+  <% if project.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>The following errors prevented the project from being saved:</h4>
+      <ul>
+        <% project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group mb-3">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", rows: 5 %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.label :status %>
+    <%= f.select :status, ['Not Started', 'In Progress', 'On Hold', 'Completed'], { include_blank: "Select a status" }, class: "form-control" %>
+  </div>
+
+  <div class="form-group mb-3">
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to "Cancel", projects_path, class: "btn btn-secondary" %>
+  </div>
+<% end %>

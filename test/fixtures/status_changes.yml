@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from_status: MyString
+  to_status: MyString
+  reason: MyText
+  user: one
+  project: one
+
+two:
+  from_status: MyString
+  to_status: MyString
+  reason: MyText
+  user: two
+  project: two
